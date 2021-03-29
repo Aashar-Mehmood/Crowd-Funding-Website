@@ -1,0 +1,581 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* global styles */
+
+
+section.sec, section.sec section.subSec{
+  border:2px solid rgba(0, 0, 0, 0.568);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  background-color: #fff;
+  padding: 0 30px 10px 30px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.397);
+}
+section.sec section.subSec{
+  box-shadow: none;
+}
+
+
+button.dark{
+  padding: 15px 36px;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  background-color: hsl(176, 72%, 28%);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+li{
+  list-style-type: none;
+}
+
+p{
+  color: rgba(0, 0, 0, 0.582);
+}
+/* hide phone Nav */
+div.phoneNav{
+  display: none;
+}
+header img{
+  display: none;
+}
+
+
+/* header Area */
+header{
+  width: 100%;
+  min-height: 300px;
+  padding: 20px 130px 90px;
+  background:url('./images/image-hero-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+header nav {
+  width: 25%;
+}
+header ul{
+  display: flex;
+  justify-content: space-evenly;
+}
+header ul li{
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+header ul li::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: -2px;
+  left: 0px;
+  height: 3px;
+  transform-origin: left;
+  transform: scaleX(0);
+  background-color: #fff;
+  transition: transform 0.8s ease;
+}
+
+header ul li:hover::after{
+  transform: scaleX(1);
+}
+
+/* Main area */
+main{
+  width: 100%;
+  position: relative;
+}
+main>div.container{
+  max-width: 50%;
+  position: absolute;
+  left: 25%;
+  top: -100px;
+}
+
+section.first>img{
+  max-width: 32px;
+  max-height: 32px;
+  position: relative;
+  top: -20px;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+section.first div{
+  display: flex;
+}
+section.first div.text{
+  text-align: center;
+  color: black;
+  flex-flow: column;
+}
+
+section.first div.btns{
+  width: 80%;
+  margin: 10px auto;
+  flex-flow: row;
+  justify-content: space-between;
+  
+}
+
+div.btns img{
+  width: 56px;
+  height: 56px;
+  position: relative;
+  right: -40px;
+  cursor: pointer;
+}
+
+
+div.btns h3{
+  background-color:lightgrey;
+  margin: 0;
+  padding:15px 60px 0 60px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+div.btns h3.bookmarked{
+  background-color: lightcyan;
+  color: hsl(176, 72%, 28%);
+
+}
+
+/* second section count */
+
+section.second div.count{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  padding:20px 0;
+}
+section.second div.count div:nth-child(2){
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 0 70px;
+}
+
+section.second div.bar{
+  width: 100%;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 20px 0 30px 0;
+}
+
+section.second div.bar div{
+  width: 80%;
+  height: 23px;
+  border-radius: inherit;
+  background-color:hsl(176, 72%, 28%);
+}
+
+/* third section styling */
+section.sec section.one{
+  padding:10px 0;
+}
+section.sec section.subSec div:nth-child(odd){
+  display: flex;
+  justify-content: space-between;
+}
+section.sec section.subSec div:nth-child(odd) h2{
+  margin-bottom: 5px;
+}
+section.sec section.subSec div:nth-child(odd) span{
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.582);
+  font-weight: normal;
+}
+section.sec section.subSec p{
+  line-height: 1.9rem;
+}
+section.sec section.subSec div.r1 p{
+  color:hsl(176, 50%, 47%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: initial;
+}
+section.sec section.subSec div.r3{
+  margin-bottom: 20px;
+}
+
+section.sec section.four{
+  opacity: 0.5;
+}
+section.sec section.four button{
+  cursor:initial;
+}
+
+/* Modal selction area styling */
+section#modal{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 230vh;
+  background-color:rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  display: none;
+}
+section#modal div.container{
+  position: relative;
+  left : 0;
+  top: 180px;
+  width: 50%;
+  height: 50%;
+  border:2px solid rgba(0, 0, 0, 0.658);
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+section#modal div.container section{
+  border: 2px solid grey;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  position: relative;
+  height: auto;
+}
+section#modal div.container section.clicked{
+  border: 2px solid hsl(176, 50%, 47%);
+}
+
+section#modal div.container div.back p{
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+section#modal div.container div.back div{
+  display: flex;
+  justify-content: space-between;
+}
+
+section#modal div.container div.back div h1{
+  margin-bottom: 0px;
+}
+
+section#modal div.container section div.r1, section#modal div.container section div.r3{
+  display: flex;
+  flex-flow: row;
+}
+section#modal div.container section div.r1>*{
+  margin: 0;
+}
+
+section#modal div.container section div.r1 h3{
+  margin: 0 20px;
+  color: hsl(176, 50%, 47%)
+}
+
+section#modal div.container section div.r1 h2{
+ position: absolute;
+ right: 30px;
+}
+section#modal div.container section div.r1 span{
+  color: darkgrey;
+  font-size: 18px;
+}
+section#modal div.container section div.r1 i{
+  width: 30px;
+  height: 30px;
+  border: 1px solid hsl(176, 50%, 47%);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+}
+section#modal div.container section div.r1 i::after{
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  content: '';
+  width: 24px;
+  display: inline-block;
+  height: 24px;
+  border-radius: 50%;
+  background-color: darkcyan;
+  opacity: 0;
+}
+section#modal div.container section div.r1 i.active::after{
+ opacity: 1;
+}
+
+section#modal div.container section div.r2{
+  padding: 10px 0 10px 46px;
+}
+section#modal div.container section div.r2 p{
+  line-height: 30px;
+  font-size: 18px;
+}
+
+section#modal div.container section div.r3 {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid grey;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  
+}
+section#modal div.container section div.r3.visible{
+  padding: 15px 0;
+  max-height: fit-content;
+}
+
+
+section#modal div.container section div.r3 div{
+  margin-top: 10px;
+}
+
+
+
+section#modal div.container section div.r3 input{
+  padding: 13px 11px;
+  width: 100px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+section#modal div.container section div.r3 p{
+  font-size: 18px;
+}
+section#modal section.four{
+  opacity: 0.5;
+}
+section#modal section.four button{
+  cursor:initial;
+}
+i{
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* Model completed  */
+/* Thanks section styling */
+
+#thanks{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color:rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  min-width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#thanks div.container{
+  position: relative;
+  left: 0;
+  top: 0;
+  max-width: 40%;
+  height: 50%;
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid grey;
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  text-align: center;
+}
+#thanks p{
+  line-height: 26px;
+  font-size: 18px;
+}
+#thanks h2{
+  margin-bottom: -10px;
+}
+@media screen and (max-width:1024px){
+  header {
+    padding: 20px 60px 60px;
+  }
+  header nav{
+    width: 50%;
+  }
+  main>div.container{
+    max-width: 70%;
+    left: 15%;
+  }
+  section#modal div.container{
+    width: 80%;
+  }
+  #thanks div.container{
+    width: 60%;
+    max-width: 60%;
+  }
+}
+@media screen and (max-width:768px){
+  main>div.container{
+    max-width: 86%;
+    left: 7%;
+  }
+  section#modal div.container{
+    width: 90%;
+  }
+
+}
+@media screen and (width:1024px){
+  #thanks div.container {
+    height: 40%;
+  }
+  #thanks p{
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width:420px){
+  header {
+    padding: 20px 40px;
+  }
+  header img{
+    display: block;
+    width: 20px;
+    height: 19px;
+    margin-top: 20px;
+  }
+  header>nav{
+    display: none;
+  }
+  div.phoneNav{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.6s ease-in;
+  }
+  div.phoneNav.active{
+    z-index: 4;
+    transform: scale(1);
+  }
+  div.phoneNav div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+ 
+  div.phoneNav ul{
+    display: flex;
+    flex-flow: column;
+    height: 200px;
+    background-color: #fff;
+    color: black;
+    width: 96%;
+    position: relative;
+    border-radius: 5px;
+    right: -1%;
+    padding-left: 0;
+  }
+  div.phoneNav ul hr{
+    margin: 0;
+  }
+  div.phoneNav ul li{
+    padding-left: 35px;
+  }
+
+  section.sec{
+    padding: 10px;
+  }
+  section.first div.btns{
+    width: 88%;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  div.btns h3{
+    display: none;
+  }
+  section.second div.count{
+    flex-flow: column;
+  }
+  section.second div.count div:nth-child(2){
+    padding: 0px;
+    border: none;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+  }
+  section.second div.count div{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+  section.sec.third p{
+    line-height: 25px;
+  }
+  section.sec section.subSec div:nth-child(odd){
+    flex-flow: column;
+    height: 130px;
+    justify-content: space-around;
+    width: 65%;
+  }
+  section.sec section.subSec div:nth-child(odd) p{
+    margin-top: 0px;
+  }
+  section.sec section.subSec div:nth-child(odd) h3{
+    margin-bottom: 0px;
+  }
+  section.sec section.subSec p{
+    margin: 0;
+  }
+  section.second div.count{
+    padding:0;
+  }
+  section#modal div.container section div.r1{
+    flex-wrap: wrap;
+  }
+  section#modal div.container section div.r1 h2{
+    left: 76px;
+    top: 22px;
+  }
+  section#modal div.container section div.r1 h3 {
+    width: 100%;
+    margin-top: 10px;
+  }
+  section#modal div.container section div.r2{
+    padding-left: 19px;
+    padding-top: 0px;
+  }
+  section#modal div.container section div.r3{
+    flex-flow: column;
+  }
+  #thanks div.container{
+    width: 80%;
+    max-width: 80%;
+  }
+}
