@@ -19,25 +19,13 @@ const closeNav = document.querySelector('div.phoneNav div img');
 // phone Nav section
 const phonNavSec = document.querySelector('div.phoneNav');
 
-const firstHost = window.location.origin;
-const secHost = window.location.href;
-
 function changeMarkImage(){
-  console.log('clicked');
-  
-  if((bookmarkImage.src ==`${firstHost}/images/bookmarked.svg`)){
-    bookmarkImage.src = "http://127.0.0.1:5500/images/icon-bookmark.svg";
+  const src = bookmarkImage.getAttribute('src');
+  if(src == 'images/icon-bookmark.svg'){
+    bookmarkImage.setAttribute('src', 'images/bookmarked.svg');
   }
-  else if(bookmarkImage.src ==`${firstHost}/images/icon-bookmark.svg`){
-    bookmarkImage.src = "http://127.0.0.1:5500/images/bookmarked.svg";
-  }
-  else if(bookmarkImage.src == secHost+'../../images/bookmarked.svg'){
-    console.log(1);
-    bookmarkImage.src = secHost+'../../images/icon-bookmark.svg';
-  }
-  else if(bookmarkImage.src == secHost+'../../images/icon-bookmark.svg'){
-    console.log(2);
-    bookmarkImage.src = secHost+'../../images/bookmarked.svg';
+  else{
+    bookmarkImage.setAttribute('src', 'images/icon-bookmark.svg');
   }
   bookmarkText.classList.toggle('bookmarked');
 }
@@ -92,4 +80,13 @@ showNav.addEventListener('click', ()=>{
 closeNav.addEventListener('click', ()=>{
   phonNavSec.classList.remove('active');
   showNav.style.display = 'block';
+});
+
+window.addEventListener('resize',()=>{
+  if(window.outerWidth>=480){
+    showNav.style.display = 'none';
+  }
+  else {
+    showNav.style.display = 'block';
+  }
 });

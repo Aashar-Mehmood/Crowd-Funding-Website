@@ -454,7 +454,7 @@ i{
   }
 }
 
-@media screen and (max-width:420px){
+@media screen and (max-width:480px){
   header {
     padding: 20px 40px;
   }
@@ -520,6 +520,12 @@ i{
   }
   div.btns h3{
     display: none;
+  }
+  div.btns img{
+    right: -30px;
+  }
+  div.btns button.dark{
+    padding: 15px;
   }
   section.second div.count{
     flex-flow: column;
